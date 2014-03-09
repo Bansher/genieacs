@@ -78,26 +78,26 @@ npm run compile
 
 <p>Finally, run the following in GNU Screen session or something similar:</p>
 
-<pre><code>genieacs-acs
+<pre><code>genieacs-cwmp
 </code></pre>
 
 <p>This is the service that the CPEs will communicate with. It listens to port 7547 by default (see config/config.json). Configure the ACS URL of your devices accordingly.</p>
 
-<pre><code>genieacs-api
+<pre><code>genieacs-nbi
 </code></pre>
 
-<p>This is the API module. It exposes the API on port 7557 by default. This is needed for the GUI front end to communicate with.</p>
+<p>This is the northbound interface module. It exposes a REST API on port 7557 by default. This is needed for the GUI front end to communicate with.</p>
 
-<pre><code>genieacs-files
+<pre><code>genieacs-fs
 </code></pre>
 
 <p>This is the file server from which the CPEs will download firmware images and other types of files.</p>
 
 <p>You can use stream redirection to output to log files:</p>
 
-<pre><code>genieacs-acs &gt;&gt; /var/log/genieacs-acs.log 2&gt;&gt; /var/log/genieacs-acs-err.log
-genieacs-api &gt;&gt; /var/log/genieacs-api.log 2&gt;&gt; /var/log/genieacs-api-err.log
-genieacs-files &gt;&gt; /var/log/genieacs-files.log 2&gt;&gt; /var/log/genieacs-files-err.log
+<pre><code>genieacs-cwmp &gt;&gt; /var/log/genieacs-cwmp.log 2&gt;&gt; /var/log/genieacs-cwmp-err.log
+genieacs-nbi &gt;&gt; /var/log/genieacs-nbi.log 2&gt;&gt; /var/log/genieacs-nbi-err.log
+genieacs-fs &gt;&gt; /var/log/genieacs-fs.log 2&gt;&gt; /var/log/genieacs-fs-err.log
 </code></pre>
 
 <p>For further details about installation and configuration, refer to the <a href="https://github.com/zaidka/genieacs/wiki">wiki section</a>.</p>
